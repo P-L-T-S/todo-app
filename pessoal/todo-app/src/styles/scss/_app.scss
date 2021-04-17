@@ -1,0 +1,16 @@
+.app {
+    .background {
+        width: 100vw;
+        height: 45vh;
+        background-image: url("/src/img/bg-desktop-light.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    main {
+        position: absolute;
+        top: 15vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
