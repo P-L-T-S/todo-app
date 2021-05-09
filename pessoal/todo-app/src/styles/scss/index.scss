@@ -1,5 +1,28 @@
-@import './colors';
-@import './global';
-@import './app';
-@import '../../components/Todo/todo';
-@import '../../components/Item/item';
+$bright-blue: #3a7bfd;
+$check-background: linear-gradient(#57ddff, #c058f3);
+@import "./global";
+
+.light {
+    $bg-light: #fafafa;
+    $bg-dark: #e4e5f1;
+    $text: #484b6a;
+    $disable-text: #d2d3db;
+    $input-text: #9394a5;
+
+    @import "./app";
+    @import "../../components/Todo/todo";
+    @import "../../components/Item/item";
+}
+.dark {
+    $bg-light: #25273c;
+    $bg-dark: #161722;
+    $text: #e4e5f1;
+    $disable-text: #777a92;
+    $input-text: #cacde8;
+    $sub-text: #4d5066;
+    // $very-dark-grayish-blue-hover: #393a4c;
+
+    @import "./app";
+    @import "../../components/Todo/todo";
+    @import "../../components/Item/item";
+}

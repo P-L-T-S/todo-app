@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Checkbox from '../partials/Checkbox';
 
-const Item = ({ value }) => {
-    const [isClicked, setIsClicked] = useState(false);
+const Item = ({ item, onclick, todos }) => {
+
+    const isClicked = item.checked
 
     function toggleClick() {
-        setIsClicked(!isClicked);
+        item.checked = !item.checked;
+        onclick([...todos])
     }
 
     return (
@@ -14,8 +16,8 @@ const Item = ({ value }) => {
             className={isClicked ? 'disabled' : ''}
             onClick={toggleClick}
         >
-            <Checkbox check={isClicked} />
-            <p>{value}</p>
+            <Checkbox check={item.checked} />
+            <p>{item.value}</p>
         </div>
     );
 };

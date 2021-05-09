@@ -10,7 +10,14 @@ div#item {
 
     border-bottom: 1px solid $disable-text;
 
-    background: $bg-very-light;
+    color: $text;
+
+    background: $bg-light;
+
+    &.disabled {
+        color: $disable-text;
+        text-decoration: line-through;
+    }
 
     .checkbox {
         height: 15px;
@@ -24,6 +31,19 @@ div#item {
         outline: none;
 
         cursor: pointer;
+
+        svg {
+            width: 10px;
+            height: 10px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 0 auto;
+
+            color: $bg-light;
+        }
     }
     .disabled {
         background: $check-background;
