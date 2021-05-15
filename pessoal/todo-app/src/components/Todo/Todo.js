@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Item from '../Item/Item';
 import moon from '../../img/icon-moon.svg';
 import sun from '../../img/icon-sun.svg';
@@ -7,6 +7,7 @@ import Checkbox from '../partials/Checkbox';
 const Todo = () => {
     const [todos, setTodos] = useState([]);
     const [icon, setIcon] = useState(moon);
+    const [windowSize, setWindowSize] = useState(window.innerWidth);
 
     function toggleTheme() {
         const tema = document.querySelector('body').classList.toggle('dark');
@@ -15,6 +16,11 @@ const Todo = () => {
             ? document.querySelector('body').classList.remove('light')
             : document.querySelector('body').classList.add('light');
     }
+
+    window.onresize = () => {
+        setWindowSize(window.innerWidth);
+        console.log(windowSize);
+    };
 
     function length() {
         let count = 0;
@@ -40,7 +46,7 @@ const Todo = () => {
                 </button>
             </header>
             <section>
-                <div id='item' class='input-wrapper'>
+                <div class='input-wrapper item'>
                     <Checkbox />
                     <input
                         type='text'
@@ -67,13 +73,15 @@ const Todo = () => {
                             />
                         );
                     })}
-                    <div id='item' className='filters'>
+                    <div className='filters item'>
                         <span>{`${length()} itens restantes`}</span>
-                        <section>
-                            <button>todos</button>
-                            <button>ativos</button>
-                            <button>completos</button>
-                        </section>
+                        {windowSize > 550 && (
+                            <section>
+                                <button>todos</button>
+                                <button>ativos</button>
+                                <button>completos</button>
+                            </section>
+                        )}
 
                         <button onClick={clearDone}>
                             {todos.some(todo => todo.checked === true) ? (
@@ -83,6 +91,15 @@ const Todo = () => {
                             )}
                         </button>
                     </div>
+                    {windowSize <= 550 && (
+                        <div className='item filters' id='filter-responsive'>
+                            <section>
+                                <button>todos</button>
+                                <button>ativos</button>
+                                <button>completos</button>
+                            </section>
+                        </div>
+                    )}
                 </div>
             </section>
         </div>

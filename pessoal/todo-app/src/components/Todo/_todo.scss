@@ -25,7 +25,7 @@
     }
     section {
         .input-wrapper {
-            margin: 30px 0;
+            margin: 20px 0;
 
             input {
                 flex: 1;
@@ -52,18 +52,18 @@
                 display: flex;
                 justify-content: space-around;
 
-                color: $disable-text;
-
+                color: $input-text;
                 button {
                     margin: 2px;
 
-                    color: $disable-text;
                     background: none;
 
                     border: none;
                     outline: none;
 
                     cursor: pointer;
+
+                    color: $input-text;
                 }
 
                 section {
@@ -71,7 +71,37 @@
                     flex: 1;
                     justify-content: space-evenly;
                 }
+
+                &.filters#filter-responsive {
+                    margin: 10px 0;
+                    padding: 10px;
+                    section {
+                        button {
+                            color: $input-text;
+                        }
+                    }
+                }
             }
         }
+    }
+    @media (max-width: 550px) {
+        font-size: 0.93rem;
+        min-width: unset;
+        width: 90vw;
+        section {
+            .items-wrapper {
+                .filters {
+                    // flex-direction: column;
+                    // height: auto;
+                    white-space: nowrap;
+
+                    justify-content: space-between;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @media (max-width: 350px) {
+        font-size: 0.87rem;
     }
 }

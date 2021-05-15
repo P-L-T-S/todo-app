@@ -1,11 +1,15 @@
 .app {
-    height: 100vh;
+    min-height: 100vh;
     background: $bg-dark;
 
     .background {
         width: 100vw;
         height: 45vh;
-        background-image: url("/src/img/bg-desktop-light.jpg");
+        @if ($theme == "light") {
+            background-image: url("/src/img/bg-desktop-light.jpg");
+        } @else {
+            background-image: url("/src/img/bg-desktop-dark.jpg");
+        }
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -15,5 +19,14 @@
         top: 15vh;
         left: 50%;
         transform: translateX(-50%);
+    }
+    @media (max-width: 500px) {
+        .background {
+            @if ($theme == "light") {
+                background-image: url("/src/img/bg-mobile-light.jpg");
+            } @else {
+                background-image: url("/src/img/bg-mobile-dark.jpg");
+            }
+        }
     }
 }

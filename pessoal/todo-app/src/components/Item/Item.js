@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Checkbox from '../partials/Checkbox';
 
 const Item = ({ item, onclick, todos }) => {
@@ -12,8 +12,8 @@ const Item = ({ item, onclick, todos }) => {
 
     return (
         <div
-            id='item'
-            className={isClicked ? 'disabled' : ''}
+            // id='item'
+            className={`${isClicked ? 'disabled' : ''} item`}
             onClick={toggleClick}
         >
             <Checkbox check={item.checked} />

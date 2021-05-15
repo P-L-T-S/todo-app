@@ -8,7 +8,7 @@ $check-background: linear-gradient(#57ddff, #c058f3);
     $text: #484b6a;
     $disable-text: #d2d3db;
     $input-text: #9394a5;
-
+    $theme: 'light';
     @import "./app";
     @import "../../components/Todo/todo";
     @import "../../components/Item/item";
@@ -17,9 +17,10 @@ $check-background: linear-gradient(#57ddff, #c058f3);
     $bg-light: #25273c;
     $bg-dark: #161722;
     $text: #e4e5f1;
-    $disable-text: #777a92;
-    $input-text: #cacde8;
-    $sub-text: #4d5066;
+    $disable-text: #4d5066;
+    $input-text: #777a92;
+    $sub-text: #cacde8;
+    $theme: 'dark';
     // $very-dark-grayish-blue-hover: #393a4c;
 
     @import "./app";
